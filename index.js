@@ -9,22 +9,23 @@ require('dotenv').config()
 App.use(express.json())
 
 // To allow manges the differents ports like frontend and backned
-let cors=require('cors')
+let cors = require('cors')
 const { userRoutes } = require('./routers/userRoutes')
 App.use(cors())
 
- 
-
-App.use('/api',userRoutes)
 
 
-mongoose.connect(`mongodb://127.0.0.1:27017/${process.env.DBName}`)
-    .then(() => {
+App.use('/api', userRoutes)
 
-        App.listen(process.env.Port, () => {
-            console.log("backend Running....",process.env.Port);
-        })
-    })
+App.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+
+
+
+App.listen(process.env.Port, () => {
+    console.log("backend Running....", process.env.Port);
+})
 
 
 

@@ -27,19 +27,3 @@ App.listen(process.env.Port, () => {
     console.log("backend Running....", process.env.Port);
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

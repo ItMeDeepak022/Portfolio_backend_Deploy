@@ -4,7 +4,7 @@ let getInfo = async (req, res) => {
     const { name, email, mobileNo, message } = req.body
 
     // 📩 Email to Admin
-    await transporter.sendMail({
+    await transporter.sendMail({ 
         from: email,
         to: "deepakkushwaha5945@gmail.com",
         subject: "New Query Received",
